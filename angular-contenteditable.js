@@ -64,7 +64,7 @@ angular.module('contenteditable', [])
         if (!!oldRender) {
           oldRender()
         }
-        element.html(ngModel.$viewValue || '')
+        element.html($sanitize(ngModel.$viewValue) || '')
         if (opts.moveCaretToEndOnChange) {
           el = element[0]
           range = document.createRange()
